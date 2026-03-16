@@ -8,7 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
 </head>
-
+<script src="js/app.js"></script>
 <body class="bg-gray-100 font-sans">
 
 
@@ -33,7 +33,7 @@
     <main class="max-w-6xl mx-auto p-6 space-y-10">
 
 
-        
+
         <section class="bg-white shadow-lg rounded-lg p-6">
 
             <h2 class="text-2xl font-bold mb-4">Prochain match</h2>
@@ -55,14 +55,14 @@
 
 
 
-        
+
         <section class="bg-white shadow-lg rounded-lg p-6 max-w-3xl mx-auto">
 
             <h2 class="text-2xl font-bold mb-6">Réserver un ticket</h2>
 
-            <form class="space-y-4">
+            <form class="space-y-4" id="reservationForm">
 
-                
+
                 <div class="grid md:grid-cols-2 gap-4">
 
                     <div>
@@ -78,18 +78,18 @@
                 </div>
 
 
-                
+
                 <div>
                     <label class="block mb-1 font-medium">Téléphone</label>
                     <input type="tel" class="w-full border rounded p-2">
                 </div>
 
 
-                
+
                 <div>
                     <label class="block mb-1 font-medium">Match</label>
 
-                    <select class="w-full border rounded p-2">
+                    <select class="w-full border rounded p-2" id="matchSelect" name="match">
 
                         <option>FC VOID vs Raja Club — 15/03/2025</option>
                         <option>FC VOID vs Wydad AC — 22/03/2025</option>
@@ -100,7 +100,7 @@
                 </div>
 
 
-                
+
                 <div>
                     <p class="font-medium mb-2">Catégorie</p>
 
@@ -126,7 +126,7 @@
                 </div>
 
 
-                
+
                 <div>
                     <label class="block mb-1 font-medium">Nombre de tickets</label>
 
@@ -135,7 +135,7 @@
                 </div>
 
 
-                
+
                 <div>
 
                     <label class="block mb-1 font-medium">Commentaire</label>
@@ -145,7 +145,7 @@
                 </div>
 
 
-                
+
                 <div class="flex items-center gap-2">
 
                     <input type="checkbox" required>
@@ -155,7 +155,7 @@
                 </div>
 
 
-                
+
 
                 <button class="bg-green-600 text-white px-6 py-3 rounded hover:bg-green-700">
 
@@ -166,12 +166,24 @@
             </form>
 
         </section>
+        <section>
+            <h2>Prochains matchs</h2>
+
+            
+            <p>
+                Réservations effectuées :
+                <span id="reservationCount">0</span>
+            </p>
+
+            
+            <div id="matchList"></div>
+        </section>
 
     </main>
 
 
 
-    
+
 
     <footer class="bg-gray-900 text-gray-300 text-center p-4">
 
